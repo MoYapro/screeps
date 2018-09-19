@@ -1,28 +1,20 @@
-var roles = require('roles');
+const roles = require('roles');
 
+let controlSpawn = {
 
-var controlSpawn = {
-
-  /** @param {Creep} creep **/
   run: function () {
 
-    var creepGroups = _.groupBy(Game.creeps, function (creep) {
-      return creep.memory.role
-    });
+    let creepGroups = _.groupBy(Game.creeps, (creep) => creep.memory.role);
 
-    for(var groupName in creepGroups) {
+    for (let groupName in creepGroups) {
       console.log(groupName, creepGroups[groupName].length);
     }
 
-
-    if (!creepGroups[roles.harvester] || (creepGroups[roles.harvester] && 2 > creepGroups[roles.harvester].length)) {
-      console.log(Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE, MOVE], null, {role: roles.harvester}));
-    }
-    if (!creepGroups[roles.upgrader] || (creepGroups[roles.upgrader] && 2 > creepGroups[roles.upgrader].length)) {
-      console.log(Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE, MOVE], null, {role: roles.upgrader}));
-    }
-    if (!creepGroups[roles.builder] || (creepGroups[roles.builder] && 2 > creepGroups[roles.builder].length)) {
-      console.log(Game.spawns['Spawn1'].createCreep([WORK, CARRY, MOVE, MOVE], null, {role: roles.builder}));
+    for (let roleIndex in roles) {
+      let role = roles[roleIndex];
+      if (!creepGroups[role.name] || (creepGroups[role.name] && 2 > creepGroups[role.name].length)) {
+        console.log(Game.spawns['Spawn1'].createCreep(role.body(), null, {role: role.name}));
+      }
     }
   }
 };
