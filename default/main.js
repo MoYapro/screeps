@@ -1,5 +1,5 @@
-var roles = require('roles');
-var controlSpawn = require('controll.spawn');
+const roles = require('roles');
+const controlSpawn = require('controll.spawn');
 
 module.exports.loop = function () {
 

@@ -12,9 +12,8 @@ let controlSpawn = {
 
     for (let roleIndex in roles) {
       let role = roles[roleIndex];
-      console.log('role', JSON.stringify(role));
       if (!creepGroups[role.name] || (creepGroups[role.name] && 2 > creepGroups[role.name].length)) {
-        console.log(Game.spawns['Spawn1'].createCreep(role.body(), null, {role: role.name}));
+        Game.spawns['Spawn1'].createCreep(role.body(), null, {role: role.name});
       }
     }
   }
