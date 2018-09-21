@@ -1,8 +1,8 @@
 module.exports = {
   getSource: (creep) => {
     if (!creep.memory.sourceId) {
-      let sourcesList = creep.room.find(FIND_SOURCES);
-      let source = sourcesList[Math.floor(Math.random() * (sourcesList.length))];
+      const sourcesList = creep.room.find(FIND_SOURCES);
+      const source = sourcesList[Math.floor(Math.random() * (sourcesList.length))];
       creep.memory.sourceId = source.id;
       return source;
     } else {
@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   carryEnergyHome: (creep) => {
-    let targets = creep.room.find(FIND_STRUCTURES, {
+    const targets = creep.room.find(FIND_STRUCTURES, {
       filter: (structure) => {
         return (structure.structureType === STRUCTURE_EXTENSION || structure.structureType === STRUCTURE_SPAWN) &&
             structure.energy < structure.energyCapacity;
@@ -44,6 +44,14 @@ module.exports = {
   upgrade: (creep) => {
     if (creep.upgradeController(creep.room.controller) === ERR_NOT_IN_RANGE) {
       creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
+    }
+  },
+  buildStuff: (creep) => {
+    const targets = creep.room.find(FIND_CONSTRUCTION_SITES);
+    if (targets.length) {
+      if (creep.build(targets[0]) === ERR_NOT_IN_RANGE) {
+        creep.moveTo(targets[0], {visualizePathStyle: {stroke: '#ffffff'}});
+      }
     }
   }
 };

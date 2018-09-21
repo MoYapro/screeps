@@ -1,6 +1,6 @@
 const creepFunctions = require('creep.functions');
 
-var roleUpgrader = {
+const roleUpgrader = {
 
   /** @param {Creep} creep **/
   run: function (creep) {
