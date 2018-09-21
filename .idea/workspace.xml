@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b5867211-4560-4a59-80af-102afa3ec450" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/default/creep.functions.js" beforeDir="false" afterPath="$PROJECT_DIR$/default/creep.functions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/default/role.builder.js" beforeDir="false" afterPath="$PROJECT_DIR$/default/role.builder.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,11 +18,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="creep.functions.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/default/creep.functions.js">
+      <file leaf-file-name="role.builder.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/default/role.builder.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+            <state relative-caret-position="280">
+              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -48,7 +48,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/default/role.builder.js" />
         <option value="$PROJECT_DIR$/default/controll.spawn.js" />
         <option value="$PROJECT_DIR$/default/control.container.js" />
         <option value="$PROJECT_DIR$/default/control.js" />
@@ -56,9 +55,10 @@
         <option value="$PROJECT_DIR$/default/control.spawn.js" />
         <option value="$PROJECT_DIR$/default/role.brawler.js" />
         <option value="$PROJECT_DIR$/default/roles.js" />
-        <option value="$PROJECT_DIR$/default/role.harvester.js" />
         <option value="$PROJECT_DIR$/default/role.upgrader.js" />
         <option value="$PROJECT_DIR$/default/creep.functions.js" />
+        <option value="$PROJECT_DIR$/default/role.harvester.js" />
+        <option value="$PROJECT_DIR$/default/role.builder.js" />
       </list>
     </option>
   </component>
@@ -250,16 +250,10 @@
     <MESSAGE value="implement basic brawler" />
     <MESSAGE value="extract methods from harvester to prepare generalization of functions" />
     <MESSAGE value="extract methods from upgrader to prepare generalization of functions" />
-    <option name="LAST_COMMIT_MESSAGE" value="extract methods from upgrader to prepare generalization of functions" />
+    <MESSAGE value="fix roles / working state" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix roles / working state" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/default/role.builder.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/projects/ScreepsAutocomplete/Structures/StructureSpawn.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -337,24 +331,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default/role.harvester.js">
+    <entry file="file://$PROJECT_DIR$/default/creep.functions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="11" column="28" lean-forward="true" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        <state relative-caret-position="196">
+          <caret line="39" column="82" selection-start-line="39" selection-start-column="82" selection-end-line="39" selection-end-column="82" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/default/role.harvester.js">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/default/role.upgrader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state>
+          <caret lean-forward="true" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/default/creep.functions.js">
+    <entry file="file://$PROJECT_DIR$/default/role.builder.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+        <state relative-caret-position="280">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>

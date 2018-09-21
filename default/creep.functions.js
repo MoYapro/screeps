@@ -4,7 +4,6 @@ module.exports = {
       let sourcesList = creep.room.find(FIND_SOURCES);
       let source = sourcesList[Math.floor(Math.random() * (sourcesList.length))];
       creep.memory.sourceId = source.id;
-      console.log('set new source to: ', creep.memory.sourceId);
       return source;
     } else {
       return Game.getObjectById(creep.memory.sourceId);
@@ -43,9 +42,7 @@ module.exports = {
     }
   },
   upgrade: (creep) => {
-    console.log('do upgrade', creep.room.controller);
     if (creep.upgradeController(creep.room.controller) === ERR_NOT_IN_RANGE) {
-    console.log('move');
       creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
     }
   }
