@@ -1,8 +1,11 @@
 const roles = require('roles');
-
+/**
+ * Control which creeps should be spawned
+ * @type {{run: controlSpawn.run}}
+ */
 let controlSpawn = {
 
-  run: function () {
+  run: function (spawn) {
 
     let creepGroups = _.groupBy(Game.creeps, (creep) => creep.memory.role);
 
@@ -13,7 +16,7 @@ let controlSpawn = {
     for (let roleIndex in roles) {
       let role = roles[roleIndex];
       if (!creepGroups[role.name] || (creepGroups[role.name] && 2 > creepGroups[role.name].length)) {
-        Game.spawns['Spawn1'].createCreep(role.body(), null, {role: role.name});
+        spawn.createCreep(role.body(), null, {role: role.name});
       }
     }
   }
