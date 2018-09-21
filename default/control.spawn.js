@@ -15,7 +15,7 @@ let controlSpawn = {
 
     for (let roleIndex in roles) {
       let role = roles[roleIndex];
-      if (!creepGroups[role.name] || (creepGroups[role.name] && 2 > creepGroups[role.name].length)) {
+      if (!creepGroups[role.name] || (creepGroups[role.name] && role.maxCount > creepGroups[role.name].length)) {
         spawn.createCreep(role.body(), null, {role: role.name});
       }
     }
