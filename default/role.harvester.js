@@ -4,7 +4,8 @@ const roleHarvester = {
 
   /** @param {Creep} creep **/
   run: function (creep) {
-    if (creep.carry.energy < creep.carryCapacity) {
+    creepFunctions.setWorkingState(creep);
+    if (creep.memory.working) {
       creepFunctions.harvest(creep, creepFunctions.getSource(creep));
     }
     else {
