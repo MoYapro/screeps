@@ -1,7 +1,6 @@
 const roles = require('roles');
 const controlSpawn = require('control.spawn');
 const controlContainer = require('control.container');
-const roomName = 'W7N4';
 module.exports.loop = function () {
 
   controlSpawn.run();
