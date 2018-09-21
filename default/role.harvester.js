@@ -6,11 +6,10 @@ const roleHarvester = {
   run: function (creep) {
     creepFunctions.setWorkingState(creep);
     if (creep.memory.working) {
-      creepFunctions.harvest(creep, creepFunctions.getSource(creep));
-    }
-    else {
       creepFunctions.resetSource(creep);
       creepFunctions.carryEnergyHome(creep);
+    } else {
+      creepFunctions.harvest(creep, creepFunctions.getSource(creep));
     }
   }
 };

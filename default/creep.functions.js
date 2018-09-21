@@ -34,16 +34,18 @@ module.exports = {
     }
   },
   setWorkingState: (creep) => {
-    if (creep.memory.working && creep.carry.energy === creep.carryCapacity) {
+    if (creep.memory.working && creep.carry.energy === 0) {
       creep.memory.working = false;
       creep.say('🔄 harvest');
-    } else if (!creep.memory.working && creep.carry.energy === 0) {
+    } else if (!creep.memory.working && creep.carry.energy === creep.carryCapacity) {
       creep.memory.working = true;
       creep.say('⚡ working');
     }
   },
   upgrade: (creep) => {
+    console.log('do upgrade', creep.room.controller);
     if (creep.upgradeController(creep.room.controller) === ERR_NOT_IN_RANGE) {
+    console.log('move');
       creep.moveTo(creep.room.controller, {visualizePathStyle: {stroke: '#ffffff'}});
     }
   }
